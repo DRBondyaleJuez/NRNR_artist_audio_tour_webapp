@@ -1,0 +1,25 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+.nav-dots-container{
+    @include mixins.flex-row-centered;
+    width: 80%;
+    max-width: 600px;
+    justify-content: space-around;
+}
+
+.nav-dot{
+    background-color: lighten(black,80%);
+    width:10px;
+    height:10px;
+    border:none;
+    border-radius: 50%;
+
+    &--highlighted{
+        width:15px;
+        height:15px;
+        border: 1px black solid;
+        box-shadow: 0 0px 6px 3px rgba(0, 0, 0, 1);
+    }
+}
+

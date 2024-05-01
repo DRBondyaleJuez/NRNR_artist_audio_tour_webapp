@@ -1,0 +1,8 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+
+header {
+    @include mixins.flex-centered;
+    height: 100px;
+}

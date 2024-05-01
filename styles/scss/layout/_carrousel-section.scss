@@ -1,0 +1,10 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+.carrousel-section{
+    //@include mixins.flex-centered;
+    flex-direction: column;
+    background-color: red;
+    width: 100%;
+
+}

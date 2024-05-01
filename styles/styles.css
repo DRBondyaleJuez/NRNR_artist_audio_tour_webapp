@@ -1,0 +1,118 @@
+body,
+p,
+div,
+ul,
+li,
+input {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #595959;
+  max-width: 100;
+}
+
+img {
+  font-style: italic;
+  -webkit-text-decoration: underline dotted white 1px;
+          text-decoration: underline dotted white 1px;
+}
+
+.carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+.carrousel__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: darkorange;
+  top: 0;
+  width: 100%;
+}
+.carrousel__art-piece-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  top: 0;
+  background-color: aqua;
+}
+.carrousel__art-piece-image {
+  max-height: 90%;
+}
+.carrousel__art-piece-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.carrousel__art-piece-title {
+  text-transform: uppercase;
+}
+.carrousel__art-piece-year {
+  text-transform: uppercase;
+}
+
+.nav-dots-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  justify-content: space-around;
+}
+
+.nav-dot {
+  background-color: #cccccc;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+}
+.nav-dot--highlighted {
+  width: 15px;
+  height: 15px;
+  border: 1px black solid;
+  box-shadow: 0 0px 6px 3px rgb(0, 0, 0);
+}
+
+.carrousel-section {
+  flex-direction: column;
+  background-color: red;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  background-color: rgb(0, 255, 4);
+}
+.image-container .logo-image {
+  width: 100%;
+  max-height: 100%;
+}
+
+.body-wrapper {
+  overflow-x: hidden;
+}/*# sourceMappingURL=styles.css.map */

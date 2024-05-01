@@ -1,0 +1,56 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+.carrousel{
+    @include mixins.flex-centered;
+    background-color: blue;
+    //padding: 10% 10%;
+    width: 500px;
+    height: 500px;
+    position:relative;
+
+    &__slide{
+        @include mixins.flex-centered;
+        flex-direction: column;
+        position: absolute;
+        background-color:darkorange;
+        top:0;
+        width:100%;
+    }
+
+    &__art-piece-image-container{
+        @include mixins.flex-centered;
+        height: 90%;
+        top:0;
+        background-color:aqua;
+
+    }
+
+    &__art-piece-image{
+        max-height: 90%;
+
+    }
+
+    &__art-piece-info{
+        @include mixins.flex-centered;
+        width:100%;
+        
+    }
+
+    &__art-piece-title{
+        text-transform: uppercase;
+        
+    }
+
+    &__art-piece-year{
+        text-transform: uppercase;
+    }
+
+
+
+
+}
+
+
+
+

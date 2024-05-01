@@ -1,0 +1,20 @@
+body,
+p,
+div,
+ul,
+li,
+input {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+body {
+    background-color: lighten(black,35%);
+    max-width: 100;
+}
+
+img {
+    font-style: italic;
+    text-decoration: underline dotted white 1px;
+}

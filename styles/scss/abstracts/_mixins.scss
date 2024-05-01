@@ -1,0 +1,51 @@
+//STYLE FORMAT MIXINS
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin whole-screen-fixed {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+
+//MEDIA QUERY MIXINS
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1200px;
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: ($mobile + 1)) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: ($desktop + 1)) and (max-width: $large) {
+    @content;
+  }
+}

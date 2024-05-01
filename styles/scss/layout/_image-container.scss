@@ -1,0 +1,17 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+
+.image-container{
+    @include mixins.flex-centered;
+    height:100%;
+    width: auto;
+    
+    background-color: rgb(0, 255, 4);
+
+
+    .logo-image{
+        width:100%;
+        max-height: 100%;
+    }
+}
