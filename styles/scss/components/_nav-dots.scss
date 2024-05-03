@@ -16,14 +16,16 @@
     height:8px;
     border:none;
     border-radius: 50%;
-    transition: box-shadow 0.5s, width 0.5s, height 0.5s;
+    opacity: 60%;
+    transition: box-shadow 0.5s, width 0.5s, height 0.5s, opacity 0.5s;
 
     &--highlighted{
         width:15px;
         height:15px;
         //border: 1px black solid;
         box-shadow: 0 0px 6px 3px rgba(0, 0, 0, 1);
-        transition: box-shadow 0.5s, width 0.5s, height 0.5s;
+        opacity: 100%;
+        transition: box-shadow 0.5s, width 0.5s, height 0.5s, opacity 0.5s;
     }
 }
 

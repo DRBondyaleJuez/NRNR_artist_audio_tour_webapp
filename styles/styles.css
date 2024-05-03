@@ -28,7 +28,7 @@ img {
   width: 500px;
   height: 500px;
   position: relative;
-  transition: 0.8s;
+  transition: transform 0.8s;
 }
 .carrousel__slide {
   display: flex;
@@ -40,6 +40,13 @@ img {
   top: 0;
   width: 500px;
   height: 400px;
+  opacity: 0%;
+  transition: opacity 0.5s;
+}
+.carrousel__slide--visible {
+  opacity: 100%;
+  visibility: visible;
+  transition: opacity 0.5s;
 }
 .carrousel__art-piece-image-container {
   display: flex;
@@ -57,17 +64,18 @@ img {
   flex: 1;
 }
 .carrousel__art-piece-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
 }
 .carrousel__art-piece-title {
+  padding: 10px 50px;
   text-transform: uppercase;
+  text-align: left;
 }
 .carrousel__art-piece-year {
+  padding: 10px 50px;
   text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
 }
 
 .nav-dots-container {
@@ -88,13 +96,15 @@ img {
   height: 8px;
   border: none;
   border-radius: 50%;
-  transition: box-shadow 0.5s, width 0.5s, height 0.5s;
+  opacity: 60%;
+  transition: box-shadow 0.5s, width 0.5s, height 0.5s, opacity 0.5s;
 }
 .nav-dot--highlighted {
   width: 15px;
   height: 15px;
   box-shadow: 0 0px 6px 3px rgb(0, 0, 0);
-  transition: box-shadow 0.5s, width 0.5s, height 0.5s;
+  opacity: 100%;
+  transition: box-shadow 0.5s, width 0.5s, height 0.5s, opacity 0.5s;
 }
 
 .test-buttons-container {

@@ -61,7 +61,7 @@ function buildCurrentHtmlEntireCarrousel(imageInfo, imageList){
     };
 
     let carrouselImageList = carrouselContainer.querySelectorAll('.carrousel__slide');
-
+    carrouselImageList[0].classList.add('carrousel__slide--visible')
     positionCarrouselImagesProperly(carrouselImageList);
 
 };
@@ -186,9 +186,15 @@ function changeNavDot(newPosition){
 }
 
 function changeImage(newPosition){
-    console.log(newPosition);
-    let imageSlide = carrouselContainer.querySelectorAll('.carrousel__slide')[0];
-    let imageSlideWidth = imageSlide.getBoundingClientRect().width;
+    
+    let imageSlideList = carrouselContainer.querySelectorAll('.carrousel__slide');
+
+    let currentSlide = imageSlideList[currentImageIndex];
+    let newSlide = imageSlideList[newPosition];
+    currentSlide.classList.remove('carrousel__slide--visible');
+    newSlide.classList.add('carrousel__slide--visible');
+
+    let imageSlideWidth = currentSlide.getBoundingClientRect().width;
     let movementScale = (- newPosition) * imageSlideWidth + 'px';
     carrouselContainer.style.transform = 'translate(' + movementScale +', 0)';
 }

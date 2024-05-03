@@ -8,7 +8,7 @@
     width: 500px;
     height: 500px;
     position:relative;
-    transition: 0.8s;
+    transition: transform 0.8s;
 
     &__slide{
         @include mixins.flex-centered;
@@ -19,6 +19,16 @@
 
         width:500px;
         height:400px;
+
+        //visibility: hidden;
+        opacity: 0%;
+        transition: opacity 0.5s;
+
+        &--visible{
+            opacity: 100%;
+            visibility: visible;
+            transition: opacity 0.5s;
+        }
         
     }
 
@@ -38,19 +48,24 @@
     }
 
     &__art-piece-info{
-        @include mixins.flex-centered;
-        flex-direction: column;
+        //@include mixins.flex-centered;
+        //flex-direction: column;
         width:100%;
+        
         
     }
 
     &__art-piece-title{
+        padding:10px 50px;
         text-transform: uppercase;
-        
+        text-align: left;
     }
 
     &__art-piece-year{
+        padding:10px 50px;
         text-transform: uppercase;
+        font-weight: bolder;
+        text-align: center;
     }
 
 
