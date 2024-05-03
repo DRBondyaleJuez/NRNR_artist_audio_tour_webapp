@@ -11,7 +11,7 @@ input {
 }
 
 body {
-  background: radial-gradient(circle, rgb(183, 184, 184) 0%, rgb(113, 113, 113) 73%, rgb(61, 61, 61) 100%);
+  background-image: linear-gradient(rgb(108, 108, 108), rgb(186, 186, 186), rgb(108, 108, 108));
   max-width: 100%;
 }
 

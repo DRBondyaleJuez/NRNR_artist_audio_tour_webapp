@@ -153,6 +153,9 @@ function playCurrentAudio() {
     let playPauseImage = document.querySelector('.play-pause-image');
     audioPlayerList[currentImageIndex].play();
     playPauseImage.src = "assets/icons/pause_icon.png"
+    audioPlayerList[currentImageIndex].onended = function(){
+        pauseCurrentAudio();
+    }
 }
 
 function pauseCurrentAudio() {
