@@ -18,7 +18,7 @@ let imageInfo = {
     6: "Scorn %% Tomoo Gokita %% 2011"
 }
 
-let imagePath = '../assets/tour_images/'
+let imagePath = 'assets/tour_images/'
 let imageList = buildImageList(imageInfo);
 
 function buildImageList(imageInfo) {
