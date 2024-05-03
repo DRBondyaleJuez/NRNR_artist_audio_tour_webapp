@@ -2,6 +2,8 @@
 let navDotsContainer = document.querySelector('.nav-dots-container');
 let carrouselContainer = document.querySelector('.carrousel');
 
+let leftButton = document.querySelector('.left-button');
+let rightButton = document.querySelector('.right-button');
 
 
 
@@ -42,13 +44,13 @@ function buildAllNavDots(){
     for(let i=0;i<imageList.length;i++){
         navDotsContainer.innerHTML += individualNavDotHtml;
     }
-
+    let navDotList = navDotsContainer.querySelectorAll(".nav-dot");
+    navDotList[0].classList.add('nav-dot--highlighted');
 }
 
 buildAllNavDots();
 
-let navDotList = navDotsContainer.querySelectorAll(".nav-dot");
-navDotList[0].classList.add('nav-dot--highlighted');
+
 
 //Build Carrosel Slides
 buildCurrentHtmlEntireCarrousel(imageInfo, imageList);
@@ -98,17 +100,97 @@ function positionCarrouselImagesProperly(imageList){
     let cummulativeReposition = 0;
     for(let i=0;i<imageList.length;i++){
         let currentImage = imageList[i];
+        let currentImageHeight = currentImage.getBoundingClientRect().height;
+        let currentImageWidth = currentImage.getBoundingClientRect().width;
+
+        //Adjust Vertically
+        let currentSlideContainerHeight = carrouselContainer.getBoundingClientRect().height;
+        currentImage.style.top = currentSlideContainerHeight/2 - currentImageHeight/2 + 'px';
+    
+
+        //Adjust Horizontally
+
         currentImage.style.left = cummulativeReposition + 'px';
 
         //Recalculating next cummulative reposition
         if(i<imageList.length-1){
-            let currentImageHalfWidth = currentImage.getBoundingClientRect().width/2;
+            let currentImageHalfWidth = currentImageWidth/2;
             let nextImageHalfWidth = imageList[i+1].getBoundingClientRect().width/2;
             cummulativeReposition += currentImageHalfWidth + nextImageHalfWidth;
-            console.log(cummulativeReposition);
         }
         
     }
+
+}
+
+//Events
+
+//Swiping
+let touchStartX = 0;
+let touchEndX = 0;
+
+let carrouselSection = document.querySelector('.carrousel-section');
+
+carrouselSection.addEventListener("touchstart",(e)=> {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+carrouselSection.addEventListener("touchend",(e)=> {
+    touchEndX = e.changedTouches[0].screenX;
+    checkSwipeDirection();
+});
+
+function checkSwipeDirection(){
+    if(touchEndX<touchStartX){
+        if(currentImageIndex < Object.keys(imageInfo).length-1){
+            rightAction();
+        }
+    }
+    if(touchEndX>touchStartX){
+        if(currentImageIndex > 0){
+            leftAction();
+        }
+    }
+}
+
+leftButton.addEventListener('click', ()=>{
+    if(currentImageIndex > 0){
+        leftAction();
+    }
+});
+
+rightButton.addEventListener('click', ()=>{
+    if(currentImageIndex < Object.keys(imageInfo).length-1){
+        rightAction();
+    }
+});
+
+function leftAction(){
+    changeNavDot(currentImageIndex-1);
+    changeImage(currentImageIndex-1);
+    currentImageIndex--;
+}
+
+function rightAction(){
+    changeNavDot(currentImageIndex+1);
+    changeImage(currentImageIndex+1);
+    currentImageIndex++;
+}
+
+function changeNavDot(newPosition){
+    let navDotsList = navDotsContainer.querySelectorAll(".nav-dot");
+    let currentNavDot = navDotsList[currentImageIndex];
+    currentNavDot.classList.remove('nav-dot--highlighted');
+    let newCurrentNavDot = navDotsList[newPosition];
+    newCurrentNavDot.classList.add('nav-dot--highlighted');
+}
+
+function changeImage(newPosition){
+    console.log(newPosition);
+    let imageSlide = carrouselContainer.querySelectorAll('.carrousel__slide')[0];
+    let imageSlideWidth = imageSlide.getBoundingClientRect().width;
+    let movementScale = (- newPosition) * imageSlideWidth + 'px';
+    carrouselContainer.style.transform = 'translate(' + movementScale +', 0)';
 }
 
 

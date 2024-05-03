@@ -1,0 +1,14 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+.test-buttons-container{
+    @include mixins.flex-row-centered;
+    gap:10%;
+
+    button{
+            padding: 1% 10%;
+    width: 100px;
+    }
+
+}
+

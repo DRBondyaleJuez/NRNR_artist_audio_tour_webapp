@@ -11,7 +11,7 @@ input {
 
 body {
   background-color: #595959;
-  max-width: 100;
+  max-width: 100%;
 }
 
 img {
@@ -28,6 +28,7 @@ img {
   width: 500px;
   height: 500px;
   position: relative;
+  transition: 0.8s;
 }
 .carrousel__slide {
   display: flex;
@@ -37,23 +38,29 @@ img {
   position: absolute;
   background-color: darkorange;
   top: 0;
-  width: 100%;
+  width: 500px;
+  height: 400px;
 }
 .carrousel__art-piece-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
-  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: aqua;
 }
 .carrousel__art-piece-image {
-  max-height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  flex: 1;
 }
 .carrousel__art-piece-info {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
 }
 .carrousel__art-piece-title {
@@ -69,25 +76,43 @@ img {
   justify-content: center;
   align-items: center;
   width: 80%;
+  height: 20px;
   max-width: 600px;
   justify-content: space-around;
 }
 
 .nav-dot {
+  z-index: 50;
   background-color: #cccccc;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border: none;
   border-radius: 50%;
+  transition: box-shadow 0.5s, width 0.5s, height 0.5s;
 }
 .nav-dot--highlighted {
   width: 15px;
   height: 15px;
-  border: 1px black solid;
   box-shadow: 0 0px 6px 3px rgb(0, 0, 0);
+  transition: box-shadow 0.5s, width 0.5s, height 0.5s;
+}
+
+.test-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+.test-buttons-container button {
+  padding: 1% 10%;
+  width: 100px;
 }
 
 .carrousel-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-color: red;
   width: 100%;
