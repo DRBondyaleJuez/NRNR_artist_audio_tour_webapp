@@ -31,7 +31,7 @@ function buildImageList(imageInfo) {
 
 //Audio of Tour Data
 
-let audioPath = '../assets/tour_audio/';
+let audioPath = 'assets/tour_audio/';
 let audioList = buildAudioList(imageInfo);
 
 function buildAudioList(imageInfo) {
