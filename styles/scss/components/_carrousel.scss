@@ -3,7 +3,6 @@
 
 .carrousel {
     @include mixins.flex-centered;
-    background-color: blue;
     //padding: 10% 10%;
     width: 500px;
     height: 500px;
@@ -14,7 +13,6 @@
         @include mixins.flex-centered;
         flex-direction: column;
         position: absolute;
-        background-color: darkorange;
         top: 0;
 
         width: 500px;
@@ -29,47 +27,42 @@
             visibility: visible;
             transition: opacity 0.5s;
         }
-
     }
 
     &__art-piece-image-container {
         @include mixins.flex-centered;
-        width: 100%;
+        max-width: 70%;
         height: 100%;
-        background-color: aqua;
-
     }
 
     &__art-piece-image {
         object-fit: contain;
-        max-width: 100%;
+        width: 100%;
         max-height: 100%;
         flex: 1;
-        box-shadow: 0 0px 6px 3px rgba(0, 0, 0, 1);
+        box-shadow: 0 0px 20px 5px rgba(0, 0, 0, 1);
     }
 
     &__art-piece-info {
         //@include mixins.flex-centered;
         //flex-direction: column;
-        width: 100%;
-
-
+        max-width: 70%;
     }
 
     &__art-piece-title {
-        padding: 10px 50px;
+        margin-top: 2%;
+        padding: 10px 40px;
         text-transform: uppercase;
         text-align: left;
+        font-weight:normal;
+        color:black
     }
 
     &__art-piece-year {
-        padding: 10px 50px;
-        text-transform: uppercase;
+        padding: 10px 40px;
         font-weight: bolder;
-        text-align: center;
+        text-align: left;
+        color:black
     }
-
-
-
 
 }

@@ -4,6 +4,5 @@
 .carrousel-section{
     @include mixins.flex-centered;
     flex-direction: column;
-    background-color: red;
     width: 100%;
 }

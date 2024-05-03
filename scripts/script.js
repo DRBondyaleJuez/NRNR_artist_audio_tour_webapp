@@ -2,12 +2,7 @@
 let navDotsContainer = document.querySelector('.nav-dots-container');
 let carrouselContainer = document.querySelector('.carrousel');
 
-let leftButton = document.querySelector('.left-button');
-let rightButton = document.querySelector('.right-button');
 let playButton = document.querySelector('.play-button');
-
-
-
 
 
 //Images of Tour Data
@@ -149,7 +144,7 @@ function setAudioHtml() {
 };
 setAudioHtml();
 
-//Events
+// ------------------   Events   -----------------
 
 //Player Actions Button
 function playCurrentAudio() {
@@ -179,6 +174,22 @@ function setPlayButton() {
 }
 setPlayButton();
 
+//Arrow keys
+document.onkeydown = checkKey;
+function checkKey(e) {
+    if(e.keyCode == '37'){
+        if (currentImageIndex > 0) {
+            leftAction();
+        }
+    }
+    if(e.keyCode == '39'){
+        if (currentImageIndex < Object.keys(imageInfo).length - 1) {
+            rightAction();
+        }
+    }
+}
+
+
 
 //Swiping
 let touchStartX = 0;
@@ -207,18 +218,6 @@ function checkSwipeDirection() {
         }
     }
 }
-
-leftButton.addEventListener('click', () => {
-    if (currentImageIndex > 0) {
-        leftAction();
-    }
-});
-
-rightButton.addEventListener('click', () => {
-    if (currentImageIndex < Object.keys(imageInfo).length - 1) {
-        rightAction();
-    }
-});
 
 function leftAction() {
     pauseCurrentAudio();

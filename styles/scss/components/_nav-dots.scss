@@ -7,11 +7,14 @@
     height:20px;
     max-width: 600px;
     justify-content: space-around;
+
+    margin-bottom:50px;
+
 }
 
 .nav-dot{
     z-index:50;
-    background-color: lighten(black,80%);
+    background-color: lighten(black,0%);
     width:8px;
     height:8px;
     border:none;
