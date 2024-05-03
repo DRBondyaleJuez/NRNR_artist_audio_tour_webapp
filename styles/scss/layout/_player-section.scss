@@ -1,0 +1,6 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/mixins' as mixins;
+
+.player-section {
+    @include mixins.flex-centered;
+}

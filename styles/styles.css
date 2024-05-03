@@ -62,6 +62,7 @@ img {
   max-width: 100%;
   max-height: 100%;
   flex: 1;
+  box-shadow: 0 0px 6px 3px rgb(0, 0, 0);
 }
 .carrousel__art-piece-info {
   width: 100%;
@@ -119,6 +120,26 @@ img {
   width: 100px;
 }
 
+.play-button {
+  width: 50px;
+  height: 50px;
+  font-size: larger;
+  background-color: transparent;
+  border: none;
+  text-shadow: 0 0px 6px 3px rgb(0, 0, 0);
+}
+.play-button__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+}
+.play-button__image-container img {
+  width: 100%;
+  max-height: 100%;
+}
+
 .carrousel-section {
   display: flex;
   justify-content: center;
@@ -133,6 +154,12 @@ header {
   justify-content: center;
   align-items: center;
   height: 100px;
+}
+
+.player-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-container {
