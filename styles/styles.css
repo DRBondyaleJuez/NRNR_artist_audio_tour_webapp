@@ -26,7 +26,7 @@ img {
   justify-content: center;
   align-items: center;
   width: 500px;
-  height: 500px;
+  height: 450px;
   position: relative;
   transition: transform 0.8s;
 }
@@ -89,7 +89,7 @@ img {
   height: 20px;
   max-width: 600px;
   justify-content: space-around;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .nav-dot {
